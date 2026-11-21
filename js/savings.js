@@ -364,9 +364,12 @@ function openContributionModal(goal) {
 }
 
 
+
 function closeContributionModal() {
     $("contributionModal").classList.remove("active");
+    $("contributionModal").classList.add("hidden");
 }
+
 
 async function saveContribution(event) {
     event.preventDefault();
