@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Accounts | EXPENSA</title>
+
+    <link rel="stylesheet" href="css/accounts.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/accounts.js" defer></script>
+</head>
+
+<body>
+
+    <div class="accounts-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <span class="brand-icon">E</span>
+                <span>EXPENSA</span>
+            </div>
+
+            <div class="profile">
+                <div class="profile-avatar" id="userAvatar">U</div>
+                <div>
+                    <h3 id="userName">My Account</h3>
+                    <p>Personal Workspace</p>
+                </div>
+            </div>
+
+            
+<nav class="navigation">
+    <a href="dashboard.html">▦ Dashboard</a>
+    <a href="accounts.html" class="active">▣ Accounts</a>
+    <a href="transactions.html">↔ Transactions</a>
+    <a href="budgets.html">◷ Budgets</a>
+    <a href="savings.html">♧ Savings Goals</a>
+    <a href="reports.html">▥ Reports & Analytics</a>
+</nav>
+
+
+            <button id="logoutButton" class="logout-button">
+                ↪ Sign Out
+            </button>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">FINANCIAL MANAGEMENT</p>
+                    <h1>My Accounts</h1>
+                    <p class="subtitle">
+                        Manage all your financial accounts in one place.
+                    </p>
+                </div>
+
+                <button id="addAccountButton" class="primary-button">
+                    + Add Account
+                </button>
+            </header>
+
+            <!-- SUMMARY -->
+            <section class="summary-grid">
+
+                <article class="summary-card">
+                    <p>Total Accounts</p>
+                    <h2 id="totalAccounts">0</h2>
+                    <span>Active financial accounts</span>
+                </article>
+
+                <article class="summary-card">
+                    <p>Total Opening Balance</p>
+                    <h2 id="totalBalance">₹0.00</h2>
+                    <span>Combined opening balances</span>
+                </article>
+
+                <article class="summary-card">
+                    <p>Active Accounts</p>
+                    <h2 id="activeAccounts">0</h2>
+                    <span>Currently active accounts</span>
+                </article>
+
+            </section>
+
+            <!-- ACCOUNT LIST -->
+            <section class="accounts-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Your Financial Accounts</h2>
+                        <p>Accounts belonging to your personal workspace.</p>
+                    </div>
+
+                    <button id="refreshAccounts" class="secondary-button">
+                        ↻ Refresh
+                    </button>
+                </div>
+
+                <div id="accountsList" class="accounts-grid">
+
+                    <div class="empty-state">
+                        <h3>Loading accounts...</h3>
+                        <p>Your accounts will appear here.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ADD / EDIT ACCOUNT MODAL -->
+    <div id="accountModal" class="modal hidden">
+
+        <div class="modal-card">
+
+            <div class="modal-heading">
+                <div>
+                    <p class="eyebrow">ACCOUNT MANAGEMENT</p>
+                    <h2 id="modalTitle">Add New Account</h2>
+                </div>
+
+                <button id="closeModal" class="close-button"
+                    aria-label="Close">&times;</button>
+            </div>
+
+            <form id="accountForm">
+
+                <label for="accountName">Account Name</label>
+                <input
+                    type="text"
+                    id="accountName"
+                    placeholder="Example: Personal Savings"
+                    maxlength="80"
+                    required
+                >
+
+                
+                <label for="accountType">Account Type</label>
+                <select id="accountType" required>
+                    <option value="">Select account type</option>
+                    <option value="cash">Cash</option>
+                    <option value="bank">Bank Account</option>
+                    <option value="savings">Savings Account</option>
+                    <option value="credit_card">Credit Card</option>
+                    <option value="investment">Investment Account</option>
+                    <option value="other">Other</option>
+                </select>
+
+
+                <label for="accountCurrency">Currency</label>
+                <select id="accountCurrency" required>
+                    <option value="INR">Indian Rupee (INR)</option>
+                    <option value="USD">US Dollar (USD)</option>
+                    <option value="EUR">Euro (EUR)</option>
+                    <option value="GBP">British Pound (GBP)</option>
+                </select>
+
+                <label for="openingBalance">Opening Balance</label>
+                <input
+                    type="number"
+                    id="openingBalance"
+                    min="0"
+                    step="0.01"
+                    placeholder="Enter opening balance"
+                    required
+                >
+
+                <p id="formMessage" class="form-message"></p>
+
+                <div class="modal-actions">
+                    <button type="button" id="cancelAccount"
+                        class="secondary-button">
+                        Cancel
+                    </button>
+
+                    <button type="submit" id="saveAccount"
+                        class="primary-button">
+                        Save Account
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+</body>
+</html>

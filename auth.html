@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in or create your secure EXPENSA account.">
+  <title>Welcome to EXPENSA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+  <main class="auth-shell">
+
+    <!-- Left visual panel -->
+    <section class="visual-panel">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">E</span>
+        <span>EXPENSA<span class="brand-dot">.</span></span>
+      </a>
+
+      <div class="visual-content">
+        <span class="eyebrow">YOUR MONEY. YOUR FUTURE.</span>
+
+        <h1>
+          Small steps today.<br>
+          <span>Stronger finances</span><br>
+          tomorrow.
+        </h1>
+
+        <p>
+          Build better money habits, understand your spending,
+          and make every financial decision count.
+        </p>
+
+        <div class="visual-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="growth-circle">
+            <span class="growth-symbol">↗</span>
+          </div>
+          <div class="floating-card floating-card-one">
+            <span>Monthly savings</span>
+            <strong>Grow every day ✦</strong>
+          </div>
+          <div class="floating-card floating-card-two">
+            <span>Financial habit</span>
+            <strong>Consistency wins</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual-footer">
+        <span>Spend Wisely. Save Responsibly. Build Tomorrow.</span>
+        <span>© <span id="authYear"></span> EXPENSA</span>
+      </div>
+    </section>
+
+    <!-- Right authentication panel -->
+    <section class="form-panel">
+      <div class="form-top">
+        <a href="index.html" class="mobile-brand">
+          <span class="brand-icon">E</span>
+          EXPENSA<span class="brand-dot">.</span>
+        </a>
+        <span class="secure-label">✦ Secure account access</span>
+      </div>
+
+      <div class="auth-card">
+        <div class="welcome-text">
+          <span class="eyebrow">WELCOME TO A BETTER MONEY LIFE</span>
+          <h2 id="formHeading">Welcome back.</h2>
+          <p id="formDescription">Sign in to continue your financial journey.</p>
+        </div>
+
+        <!-- Form mode selector -->
+        <div class="auth-tabs" role="tablist" aria-label="Account access">
+          <button
+            type="button"
+            class="auth-tab active"
+            id="loginTab"
+            role="tab"
+            aria-selected="true">
+            Log In
+          </button>
+
+          <button
+            type="button"
+            class="auth-tab"
+            id="signupTab"
+            role="tab"
+            aria-selected="false">
+            Create Account
+          </button>
+        </div>
+
+        <form id="authForm" novalidate>
+          <div class="form-field" id="nameField" hidden>
+            <label for="fullName">Full name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              autocomplete="name">
+            <small class="field-error" id="nameError"></small>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email address</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">✉</span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required>
+            </div>
+            <small class="field-error" id="emailError"></small>
+          </div>
+
+          <div class="form-field">
+            <div class="label-row">
+              <label for="password">Password</label>
+              <button type="button" class="text-button" id="forgotPassword">
+                Forgot password?
+              </button>
+            </div>
+
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">⌑</span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required>
+              <button
+                type="button"
+                class="password-toggle"
+                data-toggle="password"
+                aria-label="Show password">
+                Show
+              </button>
+            </div>
+            <small class="field-error" id="passwordError"></small>
+          </div>
+
+          <div class="password-strength" id="passwordStrength" hidden>
+            <div class="strength-bars">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <small id="strengthText">Password strength</small>
+          </div>
+
+          <div class="form-field" id="confirmField" hidden>
+            <label for="confirmPassword">Confirm password</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">⌑</span>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Enter your password again"
+                autocomplete="new-password">
+              <button
+                type="button"
+                class="password-toggle"
+                data-toggle="confirmPassword"
+                aria-label="Show confirm password">
+                Show
+              </button>
+            </div>
+            <small class="field-error" id="confirmError"></small>
+          </div>
+
+          <label class="remember-row" id="rememberRow">
+            <input type="checkbox" id="rememberMe" checked>
+            <span>Remember me on this device</span>
+          </label>
+
+          <label class="remember-row terms-row" id="termsRow" hidden>
+            <input type="checkbox" id="acceptTerms">
+            <span>I agree to the terms and privacy policy.</span>
+          </label>
+
+          <button type="submit" class="submit-button" id="submitButton">
+            <span id="submitText">Log In</span>
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="form-divider">
+          <span>YOUR FINANCIAL JOURNEY STARTS HERE</span>
+        </div>
+
+        <p class="bottom-note" id="bottomNote">
+          New to EXPENSA?
+          <button type="button" id="switchToSignup">Create an account</button>
+        </p>
+
+        <p class="privacy-note">
+          Your financial information deserves privacy and protection.
+        </p>
+      </div>
+
+      <div class="form-bottom">
+        <a href="index.html">← Back to EXPENSA home</a>
+        <span>Designed for better financial habits.</span>
+      </div>
+    </section>
+
+  </main>
+
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

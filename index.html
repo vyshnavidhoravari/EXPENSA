@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EXPENSA helps you track expenses, manage budgets and build responsible saving habits.">
+
+    <title>EXPENSA | Make Every Decision Count</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a href="#home" class="brand">
+            <svg class="brand-icon" viewBox="0 0 50 50" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M25 5C15 15 8 21 8 31C8 40 15 46 25 46C35 46 42 40 42 31"
+                      stroke="currentColor" stroke-width="2.5"/>
+                <path d="M17 31L24 24L30 29L39 16"
+                      stroke="#D6B779" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M32 16H39V23"
+                      stroke="#D6B779" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>EXPENSA<span class="brand-dot">.</span></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#journey">Our Philosophy</a>
+            <a href="#savings">Savings Lab</a>
+            <a href="#preview">Live Preview</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="palette-toggle" id="paletteToggle"
+                    type="button" aria-label="Switch color palette">
+                <span class="palette-swatch"></span>
+                <span>Change mood</span>
+            </button>
+
+            <a href="#preview" class="nav-cta">
+                Explore EXPENSA <span>↗</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+
+            <div class="hero-glow"></div>
+            <div class="hero-orbit orbit-one"></div>
+            <div class="hero-orbit orbit-two"></div>
+
+            <div class="hero-content reveal">
+
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    YOUR FINANCIAL JOURNEY STARTS HERE
+                </div>
+
+                <h1>
+                    Be intentional.<br>
+                    Spend <em>wisely.</em><br>
+                    Grow beyond.
+                </h1>
+
+                <p class="hero-description">
+                    Take control of your everyday expenses,
+                    build smarter financial habits and create
+                    a future shaped by responsible decisions.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#savings" class="primary-btn">
+                        Discover Your Potential <span>↗</span>
+                    </a>
+
+                    <a href="#features" class="text-link">
+                        Explore the experience <span>↓</span>
+                    </a>
+                </div>
+
+                <div class="hero-trust">
+                    <span class="trust-symbol">✳</span>
+                    Clarity in every transaction.
+                    Confidence in every decision.
+                </div>
+            </div>
+
+            <!-- FINANCIAL GROWTH ART -->
+            <div class="hero-art reveal">
+
+                <div class="art-label">
+                    THE ART OF FINANCIAL GROWTH
+                </div>
+
+                <div class="growth-art">
+                    <div class="art-circle circle-large"></div>
+                    <div class="art-circle circle-small"></div>
+                    <div class="art-sun"></div>
+                    <div class="growth-stem"></div>
+
+                    <div class="leaf leaf-one"></div>
+                    <div class="leaf leaf-two"></div>
+                    <div class="leaf leaf-three"></div>
+
+                    <div class="growth-ground"></div>
+
+                    <div class="art-star star-one">✦</div>
+                    <div class="art-star star-two">✧</div>
+                    <div class="art-star star-three">✦</div>
+                </div>
+
+                <div class="art-caption">
+                    <span>01 / 04</span>
+                    <span>Small choices. Meaningful growth.</span>
+                </div>
+
+                <div class="floating-note">
+                    <span class="note-icon">↗</span>
+                    <div>
+                        <strong>Progress begins</strong>
+                        <small>With one mindful decision</small>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#features" class="scroll-indicator">
+                <span></span>
+                SCROLL TO EXPLORE
+            </a>
+        </section>
+
+        <!-- MOVING BRAND STRIP -->
+        <div class="marquee" aria-label="EXPENSA values">
+            <div class="marquee-track">
+                <div class="marquee-group">
+                    <span>✳ TRACK MINDFULLY</span>
+                    <span>✧ SPEND WISELY</span>
+                    <span>✳ SAVE CONSISTENTLY</span>
+                    <span>✧ GROW RESPONSIBLY</span>
+                </div>
+
+                <div class="marquee-group" aria-hidden="true">
+                    <span>✳ TRACK MINDFULLY</span>
+                    <span>✧ SPEND WISELY</span>
+                    <span>✳ SAVE CONSISTENTLY</span>
+                    <span>✧ GROW RESPONSIBLY</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FEATURES -->
+        <section class="features-section" id="features">
+
+            <div class="section-top reveal">
+                <div>
+                    <p class="eyebrow-dark">
+                        A BETTER WAY TO MANAGE MONEY
+                    </p>
+                    <h2>
+                        Everything in order.<br>
+                        <em>Every decision clearer.</em>
+                    </h2>
+                </div>
+
+                <p class="section-description">
+                    One thoughtful space to understand your finances,
+                    organize your spending and stay connected to your goals.
+                </p>
+            </div>
+
+            <div class="feature-slider">
+
+                <button class="slider-arrow prev-arrow"
+                        id="prevFeature" aria-label="Previous features">
+                    ←
+                </button>
+
+                <div class="feature-track" id="featureTrack">
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="7" y="8" width="34" height="32" rx="8"
+                                      stroke="currentColor" stroke-width="1.7"/>
+                                <path d="M14 30L21 23L27 27L35 17"
+                                      stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round"/>
+                                <path d="M30 17H35V22"
+                                      stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span class="feature-number">01</span>
+                        <h3>Expense Intelligence</h3>
+                        <p>Understand every transaction and identify where your money goes.</p>
+                        <span class="feature-bottom">KNOW YOUR SPENDING ↗</span>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="16"
+                                        stroke="currentColor" stroke-width="1.7"/>
+                                <path d="M24 8V24L35 31"
+                                      stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round"/>
+                                <path d="M17 3H31"
+                                      stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="feature-number">02</span>
+                        <h3>Smart Budgeting</h3>
+                        <p>Set realistic limits, monitor your progress and avoid overspending.</p>
+                        <span class="feature-bottom">PLAN WITH PURPOSE ↗</span>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <path d="M24 41V21"
+                                      stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 28C12 28 10 19 12 13C20 12 26 17 24 28Z"
+                                      stroke="currentColor" stroke-width="1.7"/>
+                                <path d="M24 22C25 11 34 7 40 10C40 19 34 25 24 22Z"
+                                      stroke="currentColor" stroke-width="1.7"/>
+                                <path d="M13 41H36"
+                                      stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="feature-number">03</span>
+                        <h3>Goal-Based Saving</h3>
+                        <p>Turn meaningful goals into achievable milestones through consistency.</p>
+                        <span class="feature-bottom">GROW YOUR FUTURE ↗</span>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <path d="M9 37V27H17V37M21 37V18H29V37M33 37V9H41V37"
+                                      stroke="currentColor" stroke-width="2"
+                                      stroke-linejoin="round"/>
+                                <path d="M6 41H43"
+                                      stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="feature-number">04</span>
+                        <h3>Visual Analytics</h3>
+                        <p>Transform your financial activity into clear, useful insights.</p>
+                        <span class="feature-bottom">SEE THE BIGGER PICTURE ↗</span>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="10" y="9" width="28" height="31" rx="5"
+                                      stroke="currentColor" stroke-width="1.7"/>
+                                <path d="M17 5V13M31 5V13M10 19H38"
+                                      stroke="currentColor" stroke-width="1.7"
+                                      stroke-linecap="round"/>
+                                <path d="M17 27H22M27 27H32M17 33H22"
+                                      stroke="currentColor" stroke-width="1.7"
+                                      stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="feature-number">05</span>
+                        <h3>Payment Reminders</h3>
+                        <p>Keep track of recurring bills and upcoming financial commitments.</p>
+                        <span class="feature-bottom">STAY PREPARED ↗</span>
+                    </article>
+
+                </div>
+
+                <button class="slider-arrow next-arrow"
+                        id="nextFeature" aria-label="Next features">
+                    →
+                </button>
+            </div>
+
+            <div class="slider-progress">
+                <span id="sliderStatus">01 / 05</span>
+                <div class="slider-line">
+                    <div id="sliderProgress"></div>
+                </div>
+                <span>EXPLORE</span>
+            </div>
+        </section>
+
+        <!-- FINANCIAL PHILOSOPHY -->
+        <section class="journey-section" id="journey">
+
+            <div class="journey-heading reveal">
+                <p class="eyebrow">THE EXPENSA PHILOSOPHY</p>
+                <h2>
+                    Better habits.<br>
+                    <em>Stronger tomorrows.</em>
+                </h2>
+                <p>
+                    Financial confidence is built through small,
+                    consistent actions.
+                </p>
+            </div>
+
+            <div class="journey-steps">
+                <div class="journey-step reveal">
+                    <span>01</span>
+                    <h3>Track</h3>
+                    <p>Become aware of every financial decision.</p>
+                </div>
+
+                <div class="journey-step reveal">
+                    <span>02</span>
+                    <h3>Understand</h3>
+                    <p>Recognize patterns and identify opportunities.</p>
+                </div>
+
+                <div class="journey-step reveal">
+                    <span>03</span>
+                    <h3>Control</h3>
+                    <p>Give your spending a purpose and direction.</p>
+                </div>
+
+                <div class="journey-step reveal">
+                    <span>04</span>
+                    <h3>Grow</h3>
+                    <p>Build a future through responsible habits.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE SAVINGS LAB -->
+        <section class="savings-section" id="savings">
+
+            <div class="savings-content reveal">
+
+                <p class="eyebrow-dark">
+                    A LITTLE EXPERIMENT IN CONSISTENCY
+                </p>
+
+                <h2>
+                    Small steps.<br>
+                    <em>Remarkable possibilities.</em>
+                </h2>
+
+                <p>
+                    Explore how a small daily saving habit could
+                    add up over time. Adjust the amount and discover
+                    your potential yearly contribution.
+                </p>
+
+                <label for="dailySaving">YOUR DAILY SAVING GOAL</label>
+
+                <div class="saving-input-row">
+                    <span>₹</span>
+                    <input type="number" id="dailySaving"
+                           min="0" max="100000" step="10"
+                           value="50" inputmode="decimal">
+                </div>
+
+                <input type="range" id="savingSlider"
+                       min="10" max="1000" step="10" value="50">
+
+                <div class="slider-labels">
+                    <span>₹10</span>
+                    <span>₹1,000</span>
+                </div>
+
+                <div class="saving-results">
+                    <div>
+                        <span>IN 30 DAYS</span>
+                        <strong id="monthlySaving">₹1,500</strong>
+                    </div>
+
+                    <div>
+                        <span>IN 365 DAYS</span>
+                        <strong id="yearlySaving">₹18,250</strong>
+                    </div>
+                </div>
+
+                <small class="disclaimer">
+                    Illustrative calculations based on consistent daily saving.
+                    No interest or investment returns included.
+                </small>
+            </div>
+
+            <!-- GROWING PLANT -->
+            <div class="plant-panel reveal">
+
+                <div class="plant-top">
+                    <span>YOUR GROWTH JOURNEY</span>
+                    <span class="plant-status" id="plantStatus">
+                        SEEDLING
+                    </span>
+                </div>
+
+                <div class="plant-scene" id="plantScene">
+
+                    <div class="plant-glow"></div>
+                    <div class="plant-sun"></div>
+
+                    <div class="plant-illustration" id="plantIllustration">
+                        <div class="plant-stem"></div>
+                        <div class="plant-leaf plant-leaf-left"></div>
+                        <div class="plant-leaf plant-leaf-right"></div>
+                        <div class="plant-leaf plant-leaf-top"></div>
+                    </div>
+
+                    <div class="plant-soil"></div>
+
+                    <span class="plant-spark spark-a">✦</span>
+                    <span class="plant-spark spark-b">✧</span>
+                    <span class="plant-spark spark-c">✦</span>
+                </div>
+
+                <div class="plant-bottom">
+                    <div>
+                        <strong id="plantTitle">
+                            Every journey starts small.
+                        </strong>
+                        <p id="plantMessage">
+                            Consistency is your greatest strength.
+                        </p>
+                    </div>
+                    <span class="plant-percent" id="plantPercent">01</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE FINANCE STUDIO -->
+        <section class="finance-studio" id="preview">
+
+            <div class="studio-heading reveal">
+                <p class="eyebrow-dark">A HANDS-ON PREVIEW</p>
+
+                <h2>
+                    Meet your money.<br>
+                    <em>Make it meaningful.</em>
+                </h2>
+
+                <p>
+                    Explore a sample EXPENSA workspace. Add a transaction,
+                    switch views and adjust your monthly budget to see
+                    how the experience responds.
+                </p>
+
+                <span class="demo-note">
+                    <span></span>
+                    INTERACTIVE DEMO · SAMPLE DATA ONLY
+                </span>
+            </div>
+
+            <div class="studio-shell reveal">
+
+                <!-- SIDEBAR -->
+                <aside class="studio-sidebar">
+
+                    <a class="studio-brand" href="#home">
+                        <span class="studio-mark">E</span>
+                        EXPENSA
+                    </a>
+
+                    <p class="studio-side-label">WORKSPACE</p>
+
+                    <button class="studio-nav active" data-view="overview">
+                        <span>◫</span> Overview
+                    </button>
+
+                    <button class="studio-nav" data-view="transactions">
+                        <span>↕</span> Transactions
+                    </button>
+
+                    <button class="studio-nav" data-view="budget">
+                        <span>◎</span> Budget planner
+                    </button>
+
+                    <div class="studio-side-bottom">
+                        <span class="side-avatar">K</span>
+                        <div>
+                            <strong>Your finance space</strong>
+                            <small>Preview mode</small>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- MAIN DASHBOARD -->
+                <div class="studio-main">
+
+                    <div class="studio-topbar">
+                        <div>
+                            <span class="studio-kicker">PERSONAL FINANCE</span>
+                            <h3 id="studioTitle">
+                                Good afternoon, Komali <span>✦</span>
+                            </h3>
+                            <p>Your money, made a little clearer.</p>
+                        </div>
+
+                        <span class="preview-pill">LIVE PREVIEW</span>
+                    </div>
+
+                    <!-- OVERVIEW -->
+                    <div class="studio-view active" id="view-overview">
+
+                        <div class="studio-metrics">
+
+                            <article class="metric-card metric-dark">
+                                <span>AVAILABLE BALANCE</span>
+                                <strong id="demoBalance">₹24,850</strong>
+                                <small>Across your sample accounts</small>
+                                <i>↗</i>
+                            </article>
+
+                            <article class="metric-card">
+                                <span>INCOME THIS MONTH</span>
+                                <strong class="positive" id="demoIncome">
+                                    ₹32,000
+                                </strong>
+                                <small>Sample monthly income</small>
+                                <i>＋</i>
+                            </article>
+
+                            <article class="metric-card">
+                                <span>SPENT THIS MONTH</span>
+                                <strong id="demoExpense">₹7,150</strong>
+                                <small>Keep your spending in view</small>
+                                <i>↘</i>
+                            </article>
+
+                        </div>
+
+                        <div class="studio-grid">
+
+                            <article class="studio-panel spending-panel">
+
+                                <div class="panel-heading">
+                                    <div>
+                                        <span class="panel-eyebrow">
+                                            SPENDING SNAPSHOT
+                                        </span>
+                                        <h4>Where it goes</h4>
+                                    </div>
+                                    <span class="panel-period">THIS MONTH</span>
+                                </div>
+
+                                <div class="spend-content">
+
+                                    <div class="donut-wrap">
+                                        <div class="demo-donut" id="demoDonut">
+                                            <div>
+                                                <strong id="donutTotal">₹7,150</strong>
+                                                <small>Total spent</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="category-legend" id="categoryLegend">
+                                        <div>
+                                            <span class="legend-dot food"></span>
+                                            <span>Food</span>
+                                            <strong>₹2,400</strong>
+                                        </div>
+                                        <div>
+                                            <span class="legend-dot travel"></span>
+                                            <span>Travel</span>
+                                            <strong>₹1,850</strong>
+                                        </div>
+                                        <div>
+                                            <span class="legend-dot bills"></span>
+                                            <span>Bills</span>
+                                            <strong>₹1,500</strong>
+                                        </div>
+                                        <div>
+                                            <span class="legend-dot other"></span>
+                                            <span>Others</span>
+                                            <strong>₹1,400</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="studio-panel budget-panel">
+
+                                <div class="panel-heading">
+                                    <div>
+                                        <span class="panel-eyebrow">
+                                            MONTHLY PLAN
+                                        </span>
+                                        <h4>Budget progress</h4>
+                                    </div>
+                                    <span class="budget-icon">⌁</span>
+                                </div>
+
+                                <div class="budget-amount-row">
+                                    <strong id="budgetSpent">₹7,150</strong>
+                                    <span>
+                                        of <b id="budgetLimitLabel">₹15,000</b>
+                                    </span>
+                                </div>
+
+                                <div class="budget-track">
+                                    <span id="budgetFill"></span>
+                                </div>
+
+                                <div class="budget-foot">
+                                    <span id="budgetPercent">48% used</span>
+                                    <span id="budgetRemaining">₹7,850 left</span>
+                                </div>
+
+                                <button class="text-action" data-jump="budget">
+                                    Adjust your budget <span>↗</span>
+                                </button>
+                            </article>
+                        </div>
+
+                        <article class="studio-panel recent-panel">
+
+                            <div class="panel-heading">
+                                <div>
+                                    <span class="panel-eyebrow">
+                                        YOUR ACTIVITY
+                                    </span>
+                                    <h4>Recent transactions</h4>
+                                </div>
+
+                                <button class="text-action" data-jump="transactions">
+                                    View all <span>↗</span>
+                                </button>
+                            </div>
+
+                            <div class="demo-transaction-list" id="demoRecent"></div>
+                        </article>
+                    </div>
+
+                    <!-- TRANSACTIONS -->
+                    <div class="studio-view" id="view-transactions">
+
+                        <div class="view-intro">
+                            <div>
+                                <span class="panel-eyebrow">
+                                    KEEP EVERY DETAIL IN ORDER
+                                </span>
+                                <h4>Transaction journal</h4>
+                                <p>
+                                    Add a sample income or expense and watch
+                                    your overview update.
+                                </p>
+                            </div>
+                        </div>
+
+                        <form class="demo-form" id="demoTransactionForm">
+
+                            <label>
+                                Transaction type
+                                <select id="demoType">
+                                    <option value="expense">Expense</option>
+                                    <option value="income">Income</option>
+                                </select>
+                            </label>
+
+                            <label>
+                                Description
+                                <input id="demoDescription" type="text"
+                                       maxlength="35"
+                                       placeholder="e.g. College lunch" required>
+                            </label>
+
+                            <label>
+                                Category
+                                <select id="demoCategory">
+                                    <option>Food</option>
+                                    <option>Travel</option>
+                                    <option>Bills</option>
+                                    <option>Shopping</option>
+                                    <option>Education</option>
+                                    <option>Salary</option>
+                                    <option>Other</option>
+                                </select>
+                            </label>
+
+                            <label>
+                                Amount (₹)
+                                <input id="demoAmount" type="number"
+                                       min="1" max="1000000" step="1"
+                                       placeholder="250" required>
+                            </label>
+
+                            <button class="studio-submit" type="submit">
+                                ＋ Add transaction
+                            </button>
+                        </form>
+
+                        <div class="demo-form-feedback" id="demoFeedback"
+                             role="status" aria-live="polite">
+                            This is a local preview. Your entries are not
+                            sent to a bank or database.
+                        </div>
+
+                        <article class="studio-panel journal-panel">
+
+                            <div class="panel-heading">
+                                <div>
+                                    <span class="panel-eyebrow">
+                                        SAMPLE ACTIVITY
+                                    </span>
+                                    <h4>All transactions</h4>
+                                </div>
+
+                                <span class="panel-period" id="transactionCount">
+                                    5 ENTRIES
+                                </span>
+                            </div>
+
+                            <div class="demo-transaction-list"
+                                 id="demoAllTransactions"></div>
+                        </article>
+                    </div>
+
+                    <!-- BUDGET PLANNER -->
+                    <div class="studio-view" id="view-budget">
+
+                        <div class="view-intro">
+                            <div>
+                                <span class="panel-eyebrow">
+                                    PLAN WITH PURPOSE
+                                </span>
+                                <h4>Your monthly budget</h4>
+                                <p>
+                                    Move the slider to set a spending limit
+                                    for this sample month.
+                                </p>
+                            </div>
+                        </div>
+
+                        <article class="studio-panel budget-lab">
+
+                            <div class="budget-lab-top">
+                                <div>
+                                    <span class="panel-eyebrow">
+                                        MONTHLY SPENDING LIMIT
+                                    </span>
+                                    <strong id="budgetLabValue">₹15,000</strong>
+                                </div>
+
+                                <span class="budget-icon large">◎</span>
+                            </div>
+
+                            <input type="range" id="budgetRange"
+                                   min="5000" max="50000"
+                                   step="500" value="15000">
+
+                            <div class="range-captions">
+                                <span>₹5,000</span>
+                                <span>₹50,000</span>
+                            </div>
+
+                            <div class="budget-lab-summary">
+                                <div>
+                                    <small>Spent so far</small>
+                                    <strong id="budgetLabSpent">₹7,150</strong>
+                                </div>
+
+                                <div>
+                                    <small>Remaining</small>
+                                    <strong id="budgetLabRemaining">₹7,850</strong>
+                                </div>
+
+                                <div>
+                                    <small>Budget used</small>
+                                    <strong id="budgetLabPercent">48%</strong>
+                                </div>
+                            </div>
+
+                            <div class="budget-track wide">
+                                <span id="budgetLabFill"></span>
+                            </div>
+
+                            <p class="budget-guidance" id="budgetGuidance">
+                                You are within your sample budget.
+                                Keep your spending intentional.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="studio-disclaimer">
+                        Preview figures are illustrative and reset when
+                        this page is refreshed. Real personal financial
+                        records will be connected after secure account
+                        and database setup.
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CALL TO ACTION -->
+        <section class="final-cta">
+
+            <div class="cta-decoration">✳</div>
+
+            <p class="eyebrow">YOUR NEXT CHAPTER BEGINS HERE</p>
+
+            <h2>
+                Make today count.<br>
+                <em>Build tomorrow.</em>
+            </h2>
+
+            <p>
+                A clearer understanding of your finances
+                starts with one simple decision.
+            </p>
+
+            <a href="#home" class="primary-btn">
+                Begin Your Journey <span>↗</span>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <a href="#home" class="brand footer-brand">
+            <span>EXPENSA<span class="brand-dot">.</span></span>
+        </a>
+
+        <p>Thoughtful money management. A more confident future.</p>
+
+        <span>© 2026 EXPENSA. All rights reserved.</span>
+    </footer>
+
+    <div class="expensa-toast" id="expensaToast"
+         role="status" aria-live="polite"></div>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

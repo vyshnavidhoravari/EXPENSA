@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102f28">
+  <title>Dashboard | EXPENSA</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="dashboard.html">
+        <span class="brand-mark">E</span>
+        <span>EXPENSA</span>
+      </a>
+
+      <div class="workspace-label">YOUR WORKSPACE</div>
+      <div class="workspace-card">
+        <span class="workspace-icon">⌂</span>
+        <div>
+          <strong id="workspaceName">Loading...</strong>
+          <small id="workspaceType">Personal space</small>
+        </div>
+      </div>
+
+      
+<nav class="side-nav">
+    <a class="nav-link active" href="dashboard.html">◫ <span>Overview</span></a>
+    <a class="nav-link" href="accounts.html">▣ <span>Accounts</span></a>
+    <a class="nav-link" href="transactions.html">↔ <span>Transactions</span></a>
+    <a class="nav-link" href="budgets.html">▤ <span>Budgets</span></a>
+    <a class="nav-link" href="savings.html">◎ <span>Savings goals</span></a>
+    <a class="nav-link" href="reports.html">▥ <span>Reports</span></a>
+</nav>
+
+
+      <div class="sidebar-bottom">
+        <a class="nav-link" href="#settings">⚙ <span>Settings</span></a>
+        <button class="logout-button" id="logoutButton">↪ <span>Log out</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="Toggle navigation">☰</button>
+        <div>
+          <div class="eyebrow">YOUR FINANCIAL OVERVIEW</div>
+          <h1 id="welcomeTitle">Welcome to EXPENSA</h1>
+        </div>
+        <div class="user-avatar" id="userAvatar">U</div>
+      </header>
+
+      <section id="overview">
+        <div class="intro-row">
+          <div>
+            <h2>Your money, in focus.</h2>
+            <p>Understand your finances and make every decision count.</p>
+          </div>
+          <div class="today-date" id="todayDate"></div>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card balance-card">
+            <span class="card-label">TOTAL BALANCE</span>
+            <div class="metric" id="totalBalance">₹0.00</div>
+            <span class="card-note">Across your active accounts</span>
+          </article>
+
+          <article class="summary-card">
+            <span class="card-label">TOTAL INCOME</span>
+            <div class="metric income-text" id="totalIncome">₹0.00</div>
+            <span class="card-note">This month</span>
+          </article>
+
+          <article class="summary-card">
+            <span class="card-label">TOTAL EXPENSES</span>
+            <div class="metric expense-text" id="totalExpenses">₹0.00</div>
+            <span class="card-note">This month</span>
+          </article>
+
+          <article class="summary-card">
+            <span class="card-label">NET SAVINGS</span>
+            <div class="metric" id="netSavings">₹0.00</div>
+            <span class="card-note">Income minus expenses this month</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-grid" id="accounts">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Your accounts</h3>
+              <p>Manage your money in one place.</p>
+            </div>
+            <button class="secondary-button" id="addAccountButton">+ Add account</button>
+          </div>
+          <div id="accountList" class="empty-state">
+            <div class="empty-icon">▣</div>
+            <strong>No accounts added yet</strong>
+            <p>Add your first cash, bank or savings account.</p>
+          </div>
+        </article>
+
+        <article class="panel" id="transactions">
+          <div class="panel-heading">
+            <div>
+              <h3>Recent transactions</h3>
+              <p>Your latest financial activity.</p>
+            </div>
+            <button class="secondary-button" id="addTransactionButton">+ Add transaction</button>
+          </div>
+          <div id="transactionList" class="empty-state">
+            <div class="empty-icon">↔</div>
+            <strong>No transactions yet</strong>
+            <p>Your income and expenses will appear here.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel lower-panel" id="budgets">
+        <div class="panel-heading">
+          <div>
+            <h3>Budget overview</h3>
+            <p>Your budget management will appear here.</p>
+          </div>
+        </div>
+        <div class="coming-soon">
+          <span>✦</span>
+          <div>
+            <strong>Build better spending habits.</strong>
+            <p>Budget planning will be connected in the next development phase.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>EXPENSA</span>
+        <span>Spend Wisely. Save Responsibly. Build Tomorrow.</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

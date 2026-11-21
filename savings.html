@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Goals | EXPENSA</title>
+    <link rel="stylesheet" href="css/savings.css">
+</head>
+
+<body>
+<div class="app-container">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <h2>EXPENSA<span>.</span></h2>
+            <p>Personal Finance Manager</p>
+        </div>
+
+        <div class="workspace">
+            <span>PERSONAL WORKSPACE</span>
+            <h3 id="userName">My Account</h3>
+        </div>
+
+<nav class="navigation">
+    <a href="dashboard.html">▦ Dashboard</a>
+    <a href="accounts.html">▣ Accounts</a>
+    <a href="transactions.html">↔ Transactions</a>
+    <a href="budgets.html">◷ Budgets</a>
+    <a href="savings.html" class="active">♧ Savings Goals</a>
+    <a href="reports.html">▥ Reports & Analytics</a>
+</nav>
+
+
+        <button id="logoutButton" class="logout-button">
+            ↪ Sign Out
+        </button>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">FINANCIAL GROWTH</span>
+                <h1>Savings Goals</h1>
+                <p>Turn your financial dreams into achievable goals.</p>
+            </div>
+
+            <button id="addGoalButton" class="primary-button">
+                + Create Savings Goal
+            </button>
+        </header>
+
+        <!-- Summary -->
+        <section class="summary-grid">
+
+            <div class="summary-card">
+                <p>Total Savings Target</p>
+                <h2 id="totalTarget">₹0.00</h2>
+                <span>Combined goal amounts</span>
+            </div>
+
+            <div class="summary-card">
+                <p>Total Amount Saved</p>
+                <h2 id="totalSaved">₹0.00</h2>
+                <span>Your recorded contributions</span>
+            </div>
+
+            <div class="summary-card">
+                <p>Remaining Amount</p>
+                <h2 id="totalRemaining">₹0.00</h2>
+                <span>Amount left to achieve goals</span>
+            </div>
+
+            <div class="summary-card">
+                <p>Active Goals</p>
+                <h2 id="activeGoals">0</h2>
+                <span>Goals in progress</span>
+            </div>
+
+        </section>
+
+        <!-- Goals -->
+        <section class="goals-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Your Savings Goals</h2>
+                    <p>Every contribution brings you closer to your goals.</p>
+                </div>
+
+                <select id="goalFilter">
+                    <option value="all">All Goals</option>
+                    <option value="active">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+
+            <div id="goalsList" class="goals-grid">
+                <div class="empty-state">
+                    Loading savings goals...
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<!-- Create/Edit Goal Modal -->
+<div id="goalModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <div>
+                <h2 id="modalTitle">Create Savings Goal</h2>
+                <p>Define your target and start saving.</p>
+            </div>
+
+            <button type="button" id="closeModal" class="close-button">
+                &times;
+            </button>
+        </div>
+
+        <form id="goalForm">
+
+            <label for="goalName">Goal Name</label>
+            <input
+                type="text"
+                id="goalName"
+                placeholder="Example: New Laptop"
+                maxlength="80"
+                required
+            >
+
+            <label for="goalDescription">Description</label>
+            <textarea
+                id="goalDescription"
+                rows="3"
+                placeholder="Describe your savings goal..."
+            ></textarea>
+
+            <label for="goalTarget">Target Amount</label>
+            <input
+                type="number"
+                id="goalTarget"
+                min="0.01"
+                step="0.01"
+                placeholder="Enter target amount"
+                required
+            >
+
+            <label for="goalCurrency">Currency</label>
+            <select id="goalCurrency" required>
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="USD">USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - British Pound</option>
+            </select>
+
+            <label for="goalDeadline">Target Date</label>
+            <input type="date" id="goalDeadline" required>
+
+            <p id="formMessage"></p>
+
+            <div class="modal-actions">
+                <button type="button" id="cancelGoal">Cancel</button>
+                <button type="submit" id="saveGoal">Save Goal</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- Contribution Modal -->
+<div id="contributionModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <div>
+                <h2>Add Savings</h2>
+                <p>Record an amount contributed towards your goal.</p>
+            </div>
+
+            <button type="button" id="closeContributionModal"
+                class="close-button">
+                &times;
+            </button>
+        </div>
+
+        <form id="contributionForm">
+
+            <p id="contributionGoalName" class="goal-name-display"></p>
+
+            <label for="contributionAmount">Contribution Amount</label>
+            <input
+                type="number"
+                id="contributionAmount"
+                min="0.01"
+                step="0.01"
+                placeholder="Enter amount"
+                required
+            >
+
+            <label for="contributionDate">Contribution Date</label>
+            <input type="date" id="contributionDate" required>
+
+            <label for="contributionNote">Note (Optional)</label>
+            <input
+                type="text"
+                id="contributionNote"
+                placeholder="Example: Monthly savings"
+                maxlength="150"
+            >
+
+            <p id="contributionMessage"></p>
+
+            <div class="modal-actions">
+                <button type="button" id="cancelContribution">
+                    Cancel
+                </button>
+
+                <button type="submit" id="saveContribution">
+                    Record Savings
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div id="notification" class="notification"></div>
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/savings.js" defer></script>
+
+</body>
+</html>
