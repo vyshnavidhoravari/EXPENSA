@@ -40,8 +40,10 @@ const switchToSignup = $("#switchToSignup");
 let currentMode = "login";
 
 // Destination after successful authentication
-const dashboardURL =
-  window.location.origin + "/dashboard.html";
+const dashboardURL = new URL(
+    "dashboard.html",
+    window.location.href
+).toString();
 
 // Destination after password recovery
 const recoveryURL = new URL(
